@@ -21,3 +21,4 @@ yarn run build
 ```
 yarn run lint
 ```
+The example of Treeview component usage
