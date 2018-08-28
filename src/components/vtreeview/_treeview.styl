@@ -1,0 +1,56 @@
+@import '../../../node_modules/vuetify/src/stylus/theme.styl'
+
+treeview($material)
+
+  @keyframes loading-pulse
+    50%
+      transform scale(1.3)
+    100%
+      transform scale(1.0)
+
+  .loading-pulse
+    animation loading-pulse 2000ms linear infinite
+
+  .input-group.input-group--selection-controls
+    label.treeview-label
+      position: relative
+      left: 8px
+      max-width: calc(100% - 32px)
+
+  .input-group.input-group--selection-controls
+    label
+      width calc(100% - 36px)
+      max-width calc(100% - 36px)
+
+      div
+        text-overflow ellipsis
+        overflow hidden
+        white-space nowrap
+
+  button i.icon.expanded
+    transform: rotate(90deg)
+
+  .root
+    align-items: center
+
+    .treeview-toolbar
+      visibility: hidden
+
+    .treeview-toolbar
+      button.btn
+        min-width: 32px
+
+      button.btn, .btn__content, .btn__content::before, i.icon
+        transition: none
+
+    &:hover,&.selected
+      background: $material.table.hover
+
+      .treeview-toolbar
+        visibility: visible
+
+
+  .treeview-content
+    transition: height $primary-transition
+
+theme(treeview, "treeview")
