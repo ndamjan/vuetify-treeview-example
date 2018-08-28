@@ -2,6 +2,9 @@
 
 The example of Treeview component usage
 
+Described in the Vuetify Medium publication https://medium.com/@ndamjan/building-a-treeview-component-part-iii-2dabdfd6f0cd
+
+
 ## Project setup
 ```
 yarn install
