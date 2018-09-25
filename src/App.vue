@@ -30,12 +30,24 @@
         :items="items"
         caption-field="name"
         children-field="children"
-        v-model="selectedItems"
+        v-model="selectedItemsSingle"
         select
         keyField="id"
       />
       <div>
-        Selected item ID: {{ selectedItems }}
+        Selected item ID: {{ selectedItemsSingle }}
+      </div>
+      <h2>Example 2B: one item can be selected (one child case)</h2>
+      <v-treeview
+        :items="itemsOneChild"
+        caption-field="name"
+        children-field="children"
+        v-model="selectedItemsSingle"
+        select
+        keyField="id"
+      />
+      <div>
+        Selected item ID: {{ selectedItemsSingle }}
       </div>
       <h2>Example 3: Multiple selection with checkboxes</h2>
       <h3>Basic variant</h3>
@@ -128,7 +140,30 @@ export default {
         }
       ]
     },
+    itemsOneChild: {
+      id: 0,
+      name: 'Root',
+      children: [
+        {
+          id: 1,
+          name: 'First Child',
+          children: null
+        },
+        {
+          id: 2,
+          name: 'Second Child',
+          children: [
+            {
+              id: 3,
+              name: 'Grandchild 1',
+              icon: 'account_circle'
+            }
+          ]
+        }
+      ]
+    },
     selectedItems: [],
+    selectedItemsSingle: [],
     dynamicallyLoadedChild: null
   }),
   computed: {
